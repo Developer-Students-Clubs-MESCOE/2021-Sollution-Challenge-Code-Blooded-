@@ -1,2 +1,3 @@
-Hi learning how to  operate Git
+OptiFood- Web application that predicts the daily intake of a restaurant
+
 
