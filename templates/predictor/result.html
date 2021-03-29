@@ -33,6 +33,11 @@
         </div>
     </nav>  
     
-    The predictions for the day are {{result}}
+    <ul>
+        {% for x in result %}
+            <li>The predictions for the day are {{x}}</li>
+            <br>
+        {% endfor %}
+    </ul>
 
 {%endblock%}
