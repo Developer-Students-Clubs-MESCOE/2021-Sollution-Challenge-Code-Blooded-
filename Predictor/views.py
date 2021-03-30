@@ -97,12 +97,12 @@ def computePredictions():
     predictions = loadModel(days)    
     return predictions
 
-def loadModel(days)
+def loadModel(days):
     predictions=[]
-    cls = joblib.load('finalized_model.sav')
+    cls = joblib.load('final.sav')
 
     for i in range(7):
-        x = cls.predict([[days[i]["day"], days[i]["average_temperature"], days[i]["is_weekend"], days[i]["holiday"]], days[i]["year"]])
+        x = cls.predict([[days[i]["year"], days[i]["day"], days[i]["holiday"], days[i]["is_weekend"], days[i]["average_temperature"]]])
         predictions.append(x)
 
     return predictions
