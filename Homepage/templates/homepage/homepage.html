@@ -1,0 +1,134 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block head%}
+        <title> Homepage </title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+        <link href="{% static 'styles.min.css' %}" type="text/css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">     
+        
+{% endblock %}
+
+{% block body%}
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">
+           <img class="brand-image" src="{% static 'images\logo.png'%}" width="60" height="60">
+               <strong> OptiFood</strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collape navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto" >
+            <li class="nav-item">
+                <a class="nav-link" href="">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="">Signup</a>
+            </li>
+        </ul>
+        </div>
+    </nav>
+
+    <div class="top-container container-fluid">
+        <div id="titleCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="4000" data-bs-pause=false>
+                <img src="{% static 'images\restaurant-1.png'%}" class="d-block w-100 carouselImages" alt="Restaurant 1">
+              </div>
+              <div class="carousel-item" data-bs-interval="4000" data-bs-pause=false>
+                <img src="{% static 'images\restaurant-2.png'%}" class="d-block w-100 carouselImages" alt="...">
+              </div>
+              <div class="carousel-item" data-bs-interval="4000" data-bs-pause=false>
+                <img src="{% static 'images\restaurant-3.png'%}" class="d-block w-100 carouselImages" alt="...">
+              </div>
+            </div>
+          </div>
+        <div class="row">
+            <div class="col-lg-1">
+                <p> </p>
+            </div>
+            <div class="col-lg-10 what">
+                <h1> What Do We Do?</h1>
+                <p>This site takes in your daily intake and based on this data predicts the number of orders you will receive on a given day.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="middle-container container-fluid">
+        <div class="row">
+            <div class="col-lg-1">
+                <p> </p>
+            </div>
+            <div class="col-lg-5 why">
+                <h1>Why OptiFood?</h1>
+                <p>Based on the data provided by OptiFood, restaurants can reduce their food wastage by 50%, thus saving food and money.</p>                
+            </div>
+            <div class="col-lg-5">
+                <img src="{% static 'images\food_wastage.png'%}" class="image2 img-fluid">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="bottom-container container-fluid">
+        <div class="row">
+            <div class="col-lg-1">
+                <p></p>
+            </div>
+
+            <div class="col-lg-10">
+                <h1 class="fact-title">Facts about Food Wastage</h1>
+            </div>
+        </div>        
+        <div class="row bottom">
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-text" style="margin-bottom: 24px;">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget gravida dui. Etiam porta dolor at porta consectetur. Mauris vel porttitor libero.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-text" style="margin-bottom: 24px;">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget gravida dui. Etiam porta dolor at porta consectetur. Mauris vel porttitor libero.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-text" style="margin-bottom: 24px;">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget gravida dui. Etiam porta dolor at porta consectetur. Mauris vel porttitor libero.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        <div class="row">
+            <div class="col-lg-1">
+                <p></p>
+            </div>
+
+            <div class="col-lg-10">
+                <h3>Contact Us</h3>
+                <p class="contact">Email: xxx@example.com<br>
+                    Mobile Number: +91 00000 00000
+                </p>
+            </div>
+        </div>
+        
+    </footer>    
+{% endblock %}
