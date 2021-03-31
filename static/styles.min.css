@@ -176,3 +176,11 @@ p{
     font-size:2.5rem;
 }
 
+.contact{
+    font-size:1.5rem; 
+    color:whitesmoke;
+}
+
+.contact:hover{
+    color:#d1d2e0;
+}
