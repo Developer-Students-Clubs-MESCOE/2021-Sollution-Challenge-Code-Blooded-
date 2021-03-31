@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 {% extends 'base.html' %}
 
@@ -150,3 +151,21 @@ l-form-top-left
 }
 </style>
 {% endblock %}
+=======
+<!-- templates/registration/signup.html -->
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+
+ <h2>Login</h2>
+<form method = "post">
+    {% csrf_token%}
+    {{ form.as_p }}
+    <button type = "submit">Login</button>
+</form>
+
+{% endblock %}
+
+>>>>>>> 5edba58a4f6afc5d86570615737124d67b87a28c
