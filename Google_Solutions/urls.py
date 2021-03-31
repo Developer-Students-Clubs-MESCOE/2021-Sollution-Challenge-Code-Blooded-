@@ -22,5 +22,5 @@ urlpatterns = [
     path("accounts/" , include('accounts.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
     path('', include("Homepage.urls")), 
-    path('showPredictions', include("Predictor.urls"))
+    path('result/', include("Predictor.urls"))
 ]

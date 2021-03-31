@@ -106,3 +106,46 @@ p{
     }
 }
 
+.results{
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    align-items: center;
+    font-size: 3rem;
+}
+
+.accordion-button{
+    background-color:#007580;
+    color: whitesmoke;      
+    font-size: 1.5rem;
+}
+
+.accordion-header:not(.collapsed) > button{
+    color: whitesmoke;
+    background-color: #007580;
+    border-color: whitesmoke;
+  }
+
+.accordion{
+    padding-bottom:3rem;
+}
+
+.accordion-body{
+    font-size: 1.2rem;
+}
+
+.counter-count{
+    background-color: #007580;
+    border-radius: 50%;
+    position: relative;
+    color: whitesmoke;
+    text-align: center;
+    line-height: 6rem;
+    width: 6rem;
+    height: 6rem;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    display: inline-block;
+}
+
