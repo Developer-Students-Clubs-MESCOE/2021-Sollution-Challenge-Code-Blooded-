@@ -19,27 +19,27 @@
         <div class="collape navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto" >
             <li class="nav-item">
-                <a class="nav-link" href="">Logout</a>
+                <a class="nav-link" href="{%url 'home'%}">Logout</a>
             </li>
         </ul>
         </div>
     </nav> 
     
     <div class="row results">
-        <div class="col-lg-1">
-            <p> </p>
+        <div class="col-sm-5">
+            <h1 class="top"><strong>TODAY</strong></h1>
+            <h3 class="top"> Day  is {{todayName}}</h3>
+            <h3 class="top"> Date : {{todayDate}}</h3>            
         </div>
-        <div class="col-lg-5">
-            <h1 class="results"><strong>TODAY</strong></h1>
-            <h3 class="results"> Day  is {{todayName}}</h3>
-            <h3 class="results"> Date : {{todayDate}}</h3>            
+        <div class="col-sm-1">
+            <p></p>
         </div>
-        <div class="col-lg-5">
-            <h1 class="results counter-count"><strong>{{todayPrediction}}</strong></h1>         
+        <div class="col-sm-5" style="text-align:right">
+            <h1 class="counter-count"><strong>{{todayPrediction}}</strong></h1>         
         </div>
     </div>
 
-    <div class="row">
+    <div class="row main">
         <div class="col-lg-1">
             <p> </p>
         </div>
@@ -53,7 +53,7 @@
               </h2>
               <div id="collapseOne{{forloop.counter}}" class="accordion-collapse collapse" aria-labelledby="headingOne{{forloop.counter}}" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                  On this day, you will receive {{value.prediction}} orders.
+                  On this day, you will receive {{value.prediction}} orders of burgers.
                 </div>
               </div>
             </div>    

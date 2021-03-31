@@ -1,7 +1,7 @@
 
 {% extends 'base.html' %}
 
-{% block title %}Enter new password{% endblock %}
+{% block title %}Login Page{% endblock %}
 
 {% block content %}
                
@@ -22,7 +22,7 @@
                 </div>
                 <div class="l-form-bottom">
       
-                    <form role="form" action="" method="post">
+                    <form role="form" action="{%url 'result'%}" method="post">
                         {% csrf_token %}
                         <div class="form-group">
                             <input type="text" name="username" placeholder="Username..." class="l-form-username form-control" >
@@ -30,17 +30,17 @@
                         <div class="form-group">
                             <input type="password" name="password" placeholder="Password..." class="l-form-password form-control" >
                         </div>
-                        <button type="submit" class="btn">Sign in!</button>
+                        <button type="submit" class="btn" href="{%url 'result'%}" >Sign in!</button>
                         <div class="checkbox">
                             <input type="checkbox" class="styled">
                             <label for="remember-me">Remember me</label>
                         </div>
                         
                             <div class="d-flex justify-content-center links">
-                                Don't have an account?   <a href="templates/registration/signup.html">Sign Up</a>
+                                Don't have an account?   <a href="{%url 'signup' %}">Sign Up</a>
                             </div>
                             <div class="d-flex justify-content-center">
-                                <a href="templates/registration/password_reset_form.html">Forgot your password?</a>
+                                <a href="{% url 'password_change'%}">Forgot your password?</a>
                            
                         </div>
                     </form>

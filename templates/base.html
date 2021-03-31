@@ -1,5 +1,5 @@
 <!-- templates/index.html -->
-
+{%load static%}
 <!DOCTYPE html>
 
 <html>
@@ -7,6 +7,11 @@
         <meta charset="utf-8">
         <title>{% block title %}Django auth tut{% endblock %}</title>
         <!-- Latest compiled and minified CSS -->
+
+        <link rel="icon" type="image/png" sizes="16x16" href='{% static "/favicon-16x16.png"%}'>
+        <link rel="manifest" href='{%static "/manifest.json" %}'>
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
         
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,700,700i">

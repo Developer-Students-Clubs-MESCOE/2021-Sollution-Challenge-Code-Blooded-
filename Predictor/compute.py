@@ -13,13 +13,16 @@ HOLIDAYKEY = 'a1b022f3-cce2-4b99-9cd3-a84b2e31f93b'
 WEATHERKEY = '88b7cdc97b1b6bdbf01fa35ffe779990'
 WEATHERURL = 'https://api.openweathermap.org/data/2.5/onecall'
 
+tod=''
 
+def setTod():
+    global tod
+    tod=datetime(year=2021, month=3, day=10)
 
 def computeForWeek():
-    tod = datetime.today()
     start_of_week = tod - timedelta(days=tod.weekday())  # Monday
     end_of_week = start_of_week + timedelta(days=6)  # Sunday
-    tod = start_of_week
+    x = start_of_week
     holidayparameters={
     "country": COUNTRY,
     "year" : 2020,
@@ -44,11 +47,11 @@ def computeForWeek():
 
     temperatures = response["daily"]
     for i in range(7):
-        x = (temperatures[i]["temp"]["min"] + temperatures[i]["temp"]["max"])/2
-        average_temp.append(x)
+        avg = (temperatures[i]["temp"]["min"] + temperatures[i]["temp"]["max"])/2
+        average_temp.append(avg)
 
-    while tod<=end_of_week:
-        i=tod.weekday()
+    while x<=end_of_week:
+        i=x.weekday()
         #input needed for the model
         date=1
         average_temperature=0
@@ -56,9 +59,9 @@ def computeForWeek():
         holiday=0
         year=1
 
-        MONTH = tod.month
-        DAY = tod.day
-        YEAR = tod.year
+        MONTH = x.month
+        DAY = x.day
+        YEAR = x.year
 
         #finding date
         date=DAY
@@ -67,7 +70,7 @@ def computeForWeek():
         average_temperature = average_temp[i]
 
         #finding whether day is weekend
-        if tod.weekday() == 5 or tod.weekday() == 6:
+        if x.weekday() == 5 or x.weekday() == 6:
             is_weekend = True
         else:
             is_weekend = False   
@@ -95,7 +98,9 @@ def computeForWeek():
         days[i]["is_weekend"] = is_weekend
         days[i]["holiday"] = holiday
         days[i]["year"] = year
-        tod = tod + timedelta(days=1)
+        x = x + timedelta(days=1)
+
+    print(days)
 
     predictions = loadModel(days)
     print(predictions)
@@ -111,43 +116,39 @@ def loadModel(days):
     return predictions
 
 def addToDB(predictions):
-    tod = datetime.today()
     start_of_week = tod - timedelta(days=tod.weekday())  # Monday
     end_of_week = start_of_week + timedelta(days=6)  # Sunday
-    tod = start_of_week
-    while tod<=end_of_week:
-        i = tod.weekday()
-        x = Predictions(date = tod.strftime('%d/%m/%Y'), day=tod.strftime("%A"), prediction=predictions[i])        
+    y = start_of_week
+    while y<=end_of_week:
+        i = y.weekday()
+        x = Predictions(date = y.strftime('%d/%m/%Y'), day=y.strftime("%A"), prediction=predictions[i])        
         x.save()
-        tod = tod + timedelta(days=1) 
+        y = y + timedelta(days=1) 
 
 def readFromDB():
-    tod = datetime.today()
     start_of_week = tod - timedelta(days=tod.weekday())  # Monday
     end_of_week = start_of_week + timedelta(days=6)  # Sunday
-    tod=start_of_week
+    y=start_of_week
     result={}
 
-    while tod<=end_of_week:
-        date = tod.strftime('%d/%m/%Y')
-        i=tod.weekday()
+    while y<=end_of_week:
+        date = y.strftime('%d/%m/%Y')
+        i=y.weekday()
         result[i]={}
         x = Predictions.objects.get(pk=date)
         result[i]["date"] = x.date
         result[i]["day"] = x.day
         result[i]["prediction"] = x.prediction
 
-        tod = tod + timedelta(days=1)
+        y = y + timedelta(days=1)
 
     return result        
 
 def isNewUser():
-    tod = datetime.today()
     queryset = Predictions.objects.filter(date=tod.strftime('%d/%m/%Y'))
     return not queryset.exists()
 
 def computePredictions():
-    tod = datetime.today()
     result={}
     if tod.weekday() == 0 or isNewUser():
         computeForWeek()
@@ -158,15 +159,12 @@ def computePredictions():
     return result
 
 def getNameOfToday():
-    tod = datetime.today()
     return tod.strftime("%A")
 
 def getDateOfToday():
-    tod = datetime.today()
     return tod.strftime('%d/%m/%Y')
 
 def getPredictionOfToday():
-    tod = datetime.today()
     date = tod.strftime('%d/%m/%Y')
     x =  Predictions.objects.get(pk=date)
     return x.prediction

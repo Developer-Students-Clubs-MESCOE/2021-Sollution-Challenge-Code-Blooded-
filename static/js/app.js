@@ -9,3 +9,7 @@ $('.counter-count').each(function () {
         }
     });
 });
+
+function showAlert() {
+    alert ("You have successfully registered! You can now login using your credentials.");
+  }
