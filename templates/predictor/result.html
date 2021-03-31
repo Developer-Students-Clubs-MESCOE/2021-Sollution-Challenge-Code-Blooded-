@@ -1,0 +1,81 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block head%}
+        <title> Predictions </title> 
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>       
+{% endblock %}
+
+{% block body%}
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="{%url 'home'%}">
+           <img class="brand-image" src="{% static 'images\logo.png'%}" width="60" height="60">
+               <strong> OptiFood</strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collape navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto" >
+            <li class="nav-item">
+                <a class="nav-link" href="{%url 'home'%}">Logout</a>
+            </li>
+        </ul>
+        </div>
+    </nav> 
+    
+    <div class="row results">
+        <div class="col-sm-5">
+            <h1 class="top"><strong>TODAY</strong></h1>
+            <h3 class="top"> Day  is {{todayName}}</h3>
+            <h3 class="top"> Date : {{todayDate}}</h3>            
+        </div>
+        <div class="col-sm-1">
+            <p></p>
+        </div>
+        <div class="col-sm-5" style="text-align:right">
+            <h1 class="counter-count"><strong>{{todayPrediction}}</strong></h1>         
+        </div>
+    </div>
+
+    <div class="row main">
+        <div class="col-lg-1">
+            <p> </p>
+        </div>
+        <div class="col-lg-10 accordion" id="accordionExample">
+            {%for key, value in result.items%}
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne{{forloop.counter}}">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne{{forloop.counter}}" aria-expanded="true" aria-controls="collapseOne{{forloop.counter}}">
+                  {{value.day}}, {{value.date}}
+                </button>
+              </h2>
+              <div id="collapseOne{{forloop.counter}}" class="accordion-collapse collapse" aria-labelledby="headingOne{{forloop.counter}}" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  On this day, you will receive {{value.prediction}} orders of burgers.
+                </div>
+              </div>
+            </div>    
+            {%endfor%}            
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="row">
+            <div class="col-lg-1">
+                <p></p>
+            </div>
+
+            <div class="col-lg-10">
+                <h3>Contact Us</h3>
+                <p class="contact">Email: xxx@example.com<br>
+                    Mobile Number: +91 00000 00000
+                </p>
+            </div>
+        </div>
+        
+    </footer> 
+    
+
+{%endblock%}
