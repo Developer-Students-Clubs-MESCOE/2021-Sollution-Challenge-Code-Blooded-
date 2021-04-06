@@ -1,15 +1,14 @@
 from django.shortcuts import render
 import joblib
-from datetime import datetime, timedelta
-from . import compute
+from .compute import *
 
 # Create your views here.
 def showResult(request):
-    compute.setTod()
-    result=compute.computePredictions()
-    todayDate = compute.getDateOfToday()
-    todayName = compute.getNameOfToday()
-    todayPrediction = compute.getPredictionOfToday()
+    setTod()
+    result=computePredictions()
+    todayDate =getDateOfToday()
+    todayName = getNameOfToday()
+    todayPrediction = getPredictionOfToday()
     # print(result)
     # print(todayDate)
     # print(todayName)

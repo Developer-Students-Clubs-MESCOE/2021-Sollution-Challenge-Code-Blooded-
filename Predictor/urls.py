@@ -1,7 +1,7 @@
 from django.urls import path
 
-from . import views
+from .views import showResult
 
 urlpatterns=[
-    path("", views.showResult, name="result" )
+    path("", showResult, name="result" )
 ]
