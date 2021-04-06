@@ -3,7 +3,7 @@ from datetime import datetime, timedelta
 import requests
 import sklearn
 import os
-from Predictor.models import Predictions
+from .models import Predictions
 
 HOLIDAYURL = 'https://holidayapi.com/v1/holidays'
 COUNTRY = 'CN'
@@ -17,7 +17,7 @@ tod=''
 
 def setTod():
     global tod
-    tod=datetime(year=2021, month=3, day=10)
+    tod=datetime(year=2021, month=3, day=30)
 
 def computeForWeek():
     start_of_week = tod - timedelta(days=tod.weekday())  # Monday
