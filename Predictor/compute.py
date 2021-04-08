@@ -169,3 +169,30 @@ def getPredictionOfToday():
     x =  Predictions.objects.get(pk=date)
     return x.prediction
 
+def getStartOfWeek():
+    start_of_week = tod - timedelta(days=tod.weekday())
+    return start_of_week.strftime('%d/%m/%Y')
+
+def getEndOfWeek():
+    start_of_week = tod - timedelta(days=tod.weekday())
+    end_of_week = start_of_week + timedelta(days=6)
+    return end_of_week.strftime('%d/%m/%Y')
+
+def getTotalOfWeek():
+    start_of_week = tod - timedelta(days=tod.weekday())
+    end_of_week = start_of_week + timedelta(days=6)
+    y=start_of_week
+    total=0
+
+    while y<=end_of_week:
+        date = y.strftime('%d/%m/%Y')
+        i=y.weekday()
+        x = Predictions.objects.get(pk=date)
+        total += x.prediction
+        y = y + timedelta(days=1)
+
+    return total
+
+
+
+
