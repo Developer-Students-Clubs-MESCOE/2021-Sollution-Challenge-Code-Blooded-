@@ -1,6 +1,7 @@
 from django.shortcuts import render
 import joblib
 from .compute import *
+from .inventory import *
 
 # Create your views here.
 def showResult(request):
@@ -9,6 +10,10 @@ def showResult(request):
     todayDate =getDateOfToday()
     todayName = getNameOfToday()
     todayPrediction = getPredictionOfToday()
+    startOfWeek = getStartOfWeek()
+    endOfWeek = getEndOfWeek()
+    total = getTotalOfWeek()
+
     # print(result)
     # print(todayDate)
     # print(todayName)
@@ -18,5 +23,8 @@ def showResult(request):
         "result" : result,
         "todayDate" : todayDate,
         "todayName" : todayName,
-        "todayPrediction" : todayPrediction
+        "todayPrediction" : todayPrediction, 
+        "startOfWeek" : startOfWeek,
+        "endOfWeek" : endOfWeek,
+        "total" : total
     })
