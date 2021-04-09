@@ -136,9 +136,9 @@ def readFromDB():
         i=y.weekday()
         result[i]={}
         x = Predictions.objects.get(pk=date)
-        result[i]["date"] = x.date
-        result[i]["day"] = x.day
-        result[i]["prediction"] = x.prediction
+        result[i]["date"] = x.date #date in the format dd/mm/yy
+        result[i]["day"] = x.day #name of the day Monday, Tuesday
+        result[i]["prediction"] = x.prediction #number of orders
 
         y = y + timedelta(days=1)
 
@@ -153,7 +153,6 @@ def computePredictions():
     if tod.weekday() == 0 or isNewUser():
         computeForWeek()
         result=readFromDB()
-
     else:
         result=readFromDB()
     return result
@@ -192,6 +191,9 @@ def getTotalOfWeek():
         y = y + timedelta(days=1)
 
     return total
+
+def getWeekdayOfToday():
+    return tod.weekday()
 
 
 
