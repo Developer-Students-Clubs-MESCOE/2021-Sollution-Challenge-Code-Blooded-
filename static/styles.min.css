@@ -116,7 +116,12 @@ p{
     font-family: 'Montserrat', sans-serif;
     text-align: left;
     align-items: center;
-    /* font-size: 2.5rem; */
+    font-size: 2.5rem;    
+    padding-top:1rem;
+    margin-top:1.5rem;
+    background-color: #d1d2e0;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .accordion-button{
@@ -161,16 +166,6 @@ p{
     margin-top:1.5rem;
 }
 
-.results{
-    padding-top:1rem;
-    margin-top:1.5rem;
-    background-color: #d1d2e0;
-    align-items:center;
-    margin-left: 10%;
-    margin-right: 10%;
-
-}
-
 .top{
     font-family: 'Montserrat', sans-serif;
     font-size:2.5rem;
@@ -183,4 +178,31 @@ p{
 
 .contact:hover{
     color:#d1d2e0;
+}
+
+thead{
+    font-size: 2rem;
+}
+
+tbody{
+    font-size: 1.2rem;
+}
+
+.nav-item{
+    font-size: 1.2rem;
+}
+
+.weekly-tab{
+    background-color: #007580;
+    color: whitesmoke;
+    padding: 5%;
+}
+
+.weekly-table{
+    color: whitesmoke;
+}
+
+pre{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
 }
