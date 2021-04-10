@@ -1,122 +1,363 @@
 {% extends 'layout.html' %}
 {% load static %}
-{% block head%}
-        <title> Homepage </title> 
-{% endblock %}
+{% block head %}
 
-{% block body%}
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <a class="navbar-brand" href="{%url 'home'%}">
-           <img class="brand-image" src="{% static 'images\logo.png'%}" width="60" height="60">
-               <strong> OptiFood</strong>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collape navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ms-auto" >
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'login'%}">Login</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'signup' %}">Signup</a>
-            </li>
-        </ul>
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Homepage</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  {% load static %}
+  <!-- Favicons -->
+  <link href="{% static 'img/favicon.png' %}" rel="icon">
+  <link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
+ 
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  
+  <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+  <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+
+  <script type="text/javascript">
+  const lightbox = GLightbox({ ...options });
+  </script>
+
+  <!-- Template Main CSS File -->
+  {% load static %}
+
+  <link href="{% static 'style.css'%}" rel="stylesheet">
+
+  {% endblock %}
+
+  {% block body %}
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container-fluid">
+
+      <div class="row justify-content-center">
+        <div class="col-xl-12 d-flex align-items-center justify-content-between ">
+          
+          <a class="navbar-brand" href="#">
+            <img class="brand-image" src="{% static 'images\logo.png'%}" width="40" height="40">
+                <strong> OptiFood</strong>
+         </a>
+        
+
+          <nav id="navbar" class="navbar order-last order-lg-0">
+            <ul>
+              <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+              <li><a class="nav-link scrollto" href="#about">About</a></li>
+              <li><a class="nav-link scrollto" href="#services">Food Facts</a></li>
+              
+              <li><a class="nav-link scrollto" href="#contact">Contact Us</a></li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+          </nav><!-- .navbar -->
+
+          <a href="{% url 'login'%}"  class="get-started-btn scrollto">Get Started</a>
         </div>
-    </nav>
+      </div>
 
-    <div class="top-container container-fluid">
-        <div id="titleCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active" data-bs-interval="4000" data-bs-pause=false>
-                <img src="{% static 'images\restaurant-1.png'%}" class="d-block w-100 carouselImages" alt="Restaurant 1">
-              </div>
-              <div class="carousel-item" data-bs-interval="4000" data-bs-pause=false>
-                <img src="{% static 'images\restaurant-2.png'%}" class="d-block w-100 carouselImages" alt="...">
-              </div>
-              <div class="carousel-item" data-bs-interval="4000" data-bs-pause=false>
-                <img src="{% static 'images\restaurant-3.png'%}" class="d-block w-100 carouselImages" alt="...">
-              </div>
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex flex-column justify-content-center">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-xl-8">
+          <h1>Optifood : food estimation using machine learning</h1>
+          <h2>Your one stop to cut down food wastage</h2>
+          <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox play-btn mb-4"></a>
+        </div>
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Us Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>About Us</h2>
+          <p>What is optifood?</p>
+        </div>
+
+        <div class="row content">
+          <div class="col-lg-6">
+            <p>
+              Our product estimates the number of orders your restaurant will receive weekly, so you can plan and produce your delicious meals according to their demand.
+            </p>
+            <ul>
+              <li><i class="ri-check-double-line"></i> How do we predict ? It is based on past sales of your restaurant : taking into account factors like weekends, holidays and weather.</li>
+              <li><i class="ri-check-double-line"></i> Why should you care about reducing food waste? It is a major opportunity for your restaurant to save money, enhance public perception and community relations</li>
+              <li><i class="ri-check-double-line"></i> Why are we doing this? Our goal is to achieve one of the United Nations Sustainable Development Goals : Responsible Consumption and Production</li>
+            </ul>
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0">
+            <p>
+             Any surplus food is picked up by a nearby NGO ensuring not a morsel made in your restaurant will go to waste, ensuring responsible consumption and production of food.
+            </p>
+            <a href="#" class="btn-learn-more">Learn More</a>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Us Section -->
+
+    <!-- ======= Food And Facts Section ======= -->
+    <section id="services" class="services">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Facts And Figures</h2>
+          <p>Stop the waste. Here are some stats incase you live under a rock.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bxl-dribbble"></i></div>
+              <h4><a href="">1.3 billion tonnes</a></h4>
+              <p>
+                1.3 billion tonnes of food is wasted every year, while almost 2 billion people go hungry or undernourished.</p>
             </div>
           </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-file"></i></div>
+              <h4><a href="">10 billion people by 2050</a></h4>
+              <p>
+                As the world grows to nearly 10 billion people in 2050, demand for food is expected to grow by more than 50 percent.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-tachometer"></i></div>
+              <h4><a href="">Third largest greenhouse gas emitter.</a></h4>
+              <p>If food loss were a country, it would be the third largest greenhouse gas emitter, behind China and the US</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-slideshow"></i></div>
+              <h4><a href=""></a>US $ 14 billion</h4>
+              <p>While India ranked 94th of the 107 countries on the global hunger index in 2020, a whopping US $ 14 billion worth of food products are wasted annually in India.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-world"></i></div>
+              <h4><a href=""> 2 billion people</a></h4>
+              <p> Globally, 2 billion people are overweight or obese. See the stark contrast here?</p>
+            </div>
+          </div>
+
+         
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-arch"></i></div>
+              <h4><a href="">25 percent</a></h4>
+              <p>25% of the world’s freshwater supply is used to grow food that is never eaten</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= Cta Section ======= -->
+    <section id="cta" class="cta">
+      <div class="container">
+
         <div class="row">
-            <div class="col-lg-1">
-                <p> </p>
-            </div>
-            <div class="col-lg-10 what">
-                <h1> What Do We Do?</h1>
-                <p>This site takes in your daily intake and based on this data predicts the number of orders you will receive on a given day.</p>
-            </div>
+          <div class="col-lg-9 text-center text-lg-start">
+            <h3>Sign Up Now</h3>
+            <p> Save Money. Help your Community. Become More Sustainable </p>
+          </div>
+          <div class="col-lg-3 cta-btn-container text-center">
+            <a class="cta-btn align-middle" href="#">Sign Up</a>
+          </div>
         </div>
-    </div>
 
-    <div class="middle-container container-fluid">
+      </div>
+    </section><!-- End Cta Section -->
+
+   
+
+    <!-- ======= Faq Section ======= -->
+    <section id="faq" class="faq">
+      <div class="container-fluid">
+
         <div class="row">
-            <div class="col-lg-1">
-                <p> </p>
+
+          <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
+
+            <div class="content">
+              <h3>Frequently Asked <strong>Questions</strong></h3>
+              <p>
+                Our list of  the most frequently asked questions and answers related to Optifood are below :  (contact us for any more queries)
+              </p>
             </div>
-            <div class="col-lg-5 why">
-                <h1>Why OptiFood?</h1>
-                <p>Based on the data provided by OptiFood, restaurants can reduce their food wastage by 50%, thus saving food and money.</p>                
+
+            <div class="accordion-list">
+              <ul>
+                <li>
+                  <a data-bs-toggle="collapse" class="collapse" data-bs-target="#accordion-list-1">How do we predict our numbers? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                  <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
+                    <p>
+                      Our numbers are based on your restaurant's past sales : taking into account factors like weekends, holidays and weather.
+                    </p>
+                  </div>
+                </li>
+
+                <li>
+                  <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2" class="collapsed">Why should you care about reducing food waste? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                  <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
+                    <p>
+                      It is a major opportunity for your restaurant to save money (cha-ching!), enhance public perception and establish community relations.
+                    </p>
+                  </div>
+                </li>
+
+                <li>
+                  <a data-bs-toggle="collapse" data-bs-target="#accordion-list-3" class="collapsed">What is our mission? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                  <div id="accordion-list-3" class="collapse" data-bs-parent=".accordion-list">
+                    <p>
+                      Our mission is to achieve one of the United Nations Sustainable Development Goals : Responsible Consumption and Production
+                    </p>
+                  </div>
+                </li>
+
+              </ul>
             </div>
-            <div class="col-lg-5">
-                <img src="{% static 'images\food_wastage.png'%}" class="image2 img-fluid">
-            </div>
+
+          </div>
+
+          <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img">
+            {% load static %}
+              <img class=" align-items-stretch order-1 order-lg-2 img" src="{% static 'img/faq.jpg' %}" width="600" height="600" alt="My image">
+          </div>
         </div>
 
+      </div>
+    </section><!-- End Faq Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Contact</h2>
+          <p>Get in touch with us.</p>
+        </div>
+      </div>
+
+      <div>
+        <iframe width="600" height="450" style="border:0" loading="lazy" allowfullscreen
+src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJVRhYVfjAwjsRxW7zXWA1_Js&key=AIzaSyA1gCNekK6cL25lEOV0feWiiJ76Xc-iICU"></iframe>
+      </div>
+
+      <div class="container">
+
+        <div class="row mt-5">
+
+          <div class="col-lg-4">
+            <div class="info">
+              <div class="address">
+                <i class="ri-map-pin-line"></i>
+                <h4>Location:</h4>
+                <p>Pune , Mahrashtra</p>
+              </div>
+
+              <div class="email">
+                <i class="ri-mail-line"></i>
+                <h4>Email:</h4>
+                <p>Optifood@gmail.com</p>
+              </div>
+
+              <div class="phone">
+                <i class="ri-phone-line"></i>
+                <h4>Call:</h4>
+                <p>+91 839058136</p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-8 mt-5 mt-lg-0">
+
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <h3>Optifood</h3>
+      <p>Your one stop to cut down food wastage.</p>
+      
+      </div>
     </div>
+  </footer><!-- End Footer -->
 
-    <div class="bottom-container container-fluid">
-        <div class="row">
-            <div class="col-lg-1">
-                <p></p>
-            </div>
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-            <div class="col-lg-10" style="background-color: #d1d2e0;">
-                <h1 class="fact-title">Facts about Food Wastage</h1>
-            </div>
-        </div>        
-        <div class="row bottom">
-            <div class="col-lg-4 d-flex align-items-stretch">
-                <div class="card">
-                    <div class="card-body">
-                        <p class="card-text">
-                            More than 930 million tonnes of food sold in 2019 landed in waste bins, according to new UN research, released on Thursday, in support of global efforts to halve food waste by 2030.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 d-flex align-items-stretch">
-                <div class="card">
-                    <div class="card-body">
-                        <p class="card-text">
-                            To have a sucessful restaurant the chef and his/her team need to have a firm grip on ordering of fresh, perishable goods. Depending on the type of restaurant being run, food costs can be between 30–40% of sales.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 d-flex align-items-stretch">
-                <div class="card">
-                    <div class="card-body">
-                        <p class="card-text">
-                            Annually, nearly 21 million metric tonnes of wheat rots in India. This figure is equal to Australia’s total annual production
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
+ 
 
-    </div>
+  <!-- Template Main JS File -->
+  <script src="{% static 'main.js'%}"></script>
 
-    <footer class="footer">
-        <div class="row" style="padding-top: 1rem;  padding-bottom:1.5rem;">
-            <div class="col-lg-1">
-                <p></p>
-            </div>
-            <div class="col-lg-10">
-                <a href="{%url 'contact'%}" class="contact">Contact Us!</a>
-            </div>
-        </div>
-        
-    </footer>    
-{% endblock %}
+  {% endblock %}
+
+</html>
