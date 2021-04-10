@@ -1,0 +1,208 @@
+.navbar{
+    background-color: #282846;
+    color: white;
+}
+.navbar-brand{
+    position:relative;
+    left: 4rem;
+    font-size: 2.5rem;
+    padding-bottom: 0;
+    padding-top: 0;
+    font-family: 'Dancing Script', cursive;
+}
+
+.brand-image{
+    border-radius: 30%;
+}
+
+.navbar-nav{
+    margin-right: 1.5rem; 
+    font-size: 2rem;
+}
+
+.row{
+    padding-top: 3%;
+}
+
+.top-container{
+    text-align: center;
+    background-color: whitesmoke;
+    color:#282846;
+}
+
+.carousel-inner{
+    height: 37rem;
+    padding-top: 3rem;
+}
+
+.carouselImages{
+    margin: auto;
+}
+
+.what{
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.middle-container{
+    text-align: center;
+    background-color:#007580;
+    color: whitesmoke;
+    position: relative;
+}
+
+.image2{    
+    width: 90%;
+    height: 90%;
+}
+
+.why{
+    position: relative;
+    top: 3.5rem;
+}
+
+h1{
+    font-size: 2.5rem;
+    text-align:left;
+    font-family: 'Dancing Script', cursive;
+    font-weight: 700;
+}
+
+p{
+    font-size: 1.5rem;
+    text-align: justify;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.bottom-container{
+    background-color: whitesmoke;
+    color: #282846; 
+    position: relative;
+}
+
+.bottom{
+    background-color: whitesmoke;
+    padding: 5%;
+    padding-top:2%;
+
+}
+
+.card{
+    margin: 0 3%;
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,0.5);
+    transition: 0.3s;
+}
+
+.card:hover{    
+    box-shadow: 0 12px 20px 0 rgba(0,0,0,0.5);
+}
+
+.card-text{
+    margin-bottom: 1.5rem;
+}
+
+.footer{
+    background-color: #282846;
+    color: whitesmoke;
+}
+
+@media (max-width:1000px){
+    h1{
+        margin: 2.5rem 1.5rem 0;
+    }
+}
+
+.results{
+    font-family: 'Montserrat', sans-serif;
+    text-align: left;
+    align-items: center;
+    font-size: 2.5rem;    
+    padding-top:1rem;
+    margin-top:1.5rem;
+    background-color: #d1d2e0;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.accordion-button{
+    background-color:#007580;
+    color: whitesmoke;      
+    font-size: 1.5rem;
+}
+
+.accordion-header:not(.collapsed) > button{
+    color: whitesmoke;
+    background-color: #007580;
+    border-color: whitesmoke;
+  }
+
+.accordion{
+    padding-bottom:3rem;
+}
+
+.accordion-body{
+    font-size: 1.2rem;
+}
+
+.counter-count{
+    font-family: 'Montserrat', sans-serif;
+    background-color: #007580;
+    border-radius: 50%;
+    position: relative;
+    color: whitesmoke;
+    text-align: center;
+    line-height: 6rem;
+    width: 6rem;
+    height: 6rem;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    display: inline-block;
+}
+
+.row{
+    padding-top:0;
+    margin-top:1.5rem;
+}
+
+.top{
+    font-family: 'Montserrat', sans-serif;
+    font-size:2.5rem;
+}
+
+.contact{
+    font-size:1.5rem; 
+    color:whitesmoke;
+}
+
+.contact:hover{
+    color:#d1d2e0;
+}
+
+thead{
+    font-size: 2rem;
+}
+
+tbody{
+    font-size: 1.2rem;
+}
+
+.nav-item{
+    font-size: 1.2rem;
+}
+
+.weekly-tab{
+    background-color: #007580;
+    color: whitesmoke;
+    padding: 5%;
+}
+
+.weekly-table{
+    color: whitesmoke;
+}
+
+pre{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+}
