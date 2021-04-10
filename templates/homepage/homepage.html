@@ -11,10 +11,6 @@
   <meta content="" name="keywords">
 
   {% load static %}
-  <!-- Favicons -->
-  <link href="{% static 'img/favicon.png' %}" rel="icon">
-  <link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon">
-
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
@@ -49,13 +45,12 @@
     <div class="container-fluid">
 
       <div class="row justify-content-center">
-        <div class="col-xl-12 d-flex align-items-center justify-content-between ">
+        <div class="col-xl-12 d-flex align-items-center justify-content-between">
           
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" href="#" style="font-family: 'Dancing Script', cursive; font-size:30px; margin-left: 10px">
             <img class="brand-image" src="{% static 'images\logo.png'%}" width="40" height="40">
                 <strong> OptiFood</strong>
-         </a>
-        
+          </a>        
 
           <nav id="navbar" class="navbar order-last order-lg-0">
             <ul>
@@ -273,11 +268,6 @@
         </div>
       </div>
 
-      <div>
-        <iframe width="600" height="450" style="border:0" loading="lazy" allowfullscreen
-src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJVRhYVfjAwjsRxW7zXWA1_Js&key=AIzaSyA1gCNekK6cL25lEOV0feWiiJ76Xc-iICU"></iframe>
-      </div>
-
       <div class="container">
 
         <div class="row mt-5">
@@ -350,3 +340,7 @@ src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJVRhYVfjAwjsRxW7zX
     </div>
    
 {% endblock %}
+
+{% block script %}
+  <script type="text/javascript" src="{%static 'main.js' %}"></script>
+{%endblock%}

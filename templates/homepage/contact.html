@@ -1,25 +1,20 @@
 {% extends "layout.html" %}
 {% load static %}
+{% block head %}
+    <link href="{%static 'styles.min.css'%}" rel="stylesheet">
+{% endblock %}
 {% block body %}
 <nav class="navbar navbar-expand-lg navbar-dark">
-   <a class="navbar-brand" href="{% url 'home'%}">
-    {% load static %}
-      <img class="brand-image" src="{% static 'images/logo.png' %}" width="60" height="60">
-          <strong> OptiFood</strong>
-   </a>
-   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-       <span class="navbar-toggler-icon"></span>
-   </button>
-   <div class="collape navbar-collapse" id="navbarSupportedContent">
-   <ul class="navbar-nav ms-auto" >
-       <li class="nav-item">
-           <a class="nav-link" href="{% url 'login'%}">Login</a>
-       </li>
-       <li class="nav-item">
-           <a class="nav-link" href="{% url 'signup' %}">Signup</a>
-       </li>
-   </ul>
-   </div>
+    <a class="navbar-brand" href="#" style="font-family: 'Dancing Script', cursive; font-size:30px; margin-left: 10px">
+        <img class="brand-image" src="{% static 'images\logo.png'%}" width="40" height="40">
+            <strong> OptiFood</strong>
+    </a> 
+
+    <ul class="navbar-nav ms-auto" >
+        <li class="nav-item">
+            <a class="nav-link" href="{%url 'home'%}">Logout</a>
+        </li>
+    </ul>
 </nav>
    <!--Section: Contact v.2-->
 <section class="mb-4">

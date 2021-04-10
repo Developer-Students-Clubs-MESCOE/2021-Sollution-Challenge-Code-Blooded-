@@ -1,24 +1,21 @@
 .navbar{
     background-color: #282846;
     color: white;
+    padding: 12px;
 }
 .navbar-brand{
     position:relative;
-    left: 4rem;
+    margin-left: 10px;
     font-size: 2.5rem;
     padding-bottom: 0;
     padding-top: 0;
     font-family: 'Dancing Script', cursive;
 }
 
-.brand-image{
-    border-radius: 30%;
+.navbar-nav{
+    margin-right: 4rem;
 }
 
-.navbar-nav{
-    margin-right: 1.5rem; 
-    font-size: 2rem;
-}
 
 .row{
     padding-top: 3%;
