@@ -26,6 +26,5 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/login/', views.LoginView.as_view(form_class=LoginForm)),
     path('', include("Homepage.urls")), 
-    path('result/', include("Predictor.urls"))   
-
+    path('result/', include("Predictor.urls"))
 ]

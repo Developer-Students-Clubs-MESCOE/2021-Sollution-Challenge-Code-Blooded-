@@ -2,6 +2,7 @@ from django.shortcuts import render
 import joblib
 from .compute import *
 from .inventory import *
+from django.conf import settings
 
 # Create your views here.
 def showResult(request):
@@ -52,3 +53,10 @@ def showResult(request):
         "todayInventory" : todayInventory,
         "weeklyInventory" : weeklyInventory
     })
+
+def resultTemplate(request):
+    return render(request,"predictor\\index.html",
+    {
+    'default_domain': settings.DEFAULT_DOMAIN
+    }
+    )

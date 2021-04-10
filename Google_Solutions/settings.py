@@ -126,3 +126,5 @@ STATICFILES_DIRS = [
 ]
 
 LOGIN_REDIRECT_URL = '/result'
+
+DEFAULT_DOMAIN = 'https://127.0.0.1/Google_Solutions'
