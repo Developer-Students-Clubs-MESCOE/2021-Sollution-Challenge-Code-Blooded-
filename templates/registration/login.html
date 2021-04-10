@@ -1,152 +1,82 @@
 
 {% extends 'base.html' %}
-
-{% block title %}Login Page{% endblock %}
+{% load static %}
+{% block title %}Login{% endblock %}
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'accounts/css/main.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'accounts/css/util.css' %}">
+{% endblock %}
 
 {% block content %}
                
-<div class="login-page">
 
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6 col-sm-offset-3 login-box wow fadeInUp">
- 
-                <div class="l-form-top">
-                    <div class="l-form-top-left">
-                        <h3>Sign in</h3>
-                        <p>Enter your username and password to log in:</p>
-                    </div>
-                    <div class="l-form-top-right">
-                        <i class="fa fa-lock"></i>
-                    </div>
+<div class="limiter">
+    <div class="container-login100" style="background-image: url('images/bg-01.jpg');">
+        <div class="wrap-login100">
+             <form role="form" action="{%url 'result'%}"  class="login100-form validate-form" method="post">
+                {% csrf_token %}
+                <span class="login100-form-logo">
+                    <i class="zmdi zmdi-landscape"></i>
+                </span>
+
+                <span class="login100-form-title p-b-34 p-t-27">
+                    Log in
+                </span>
+                
+                <div class="wrap-input100 validate-input" data-validate = "Enter username">
+                    <input class="input100" type="text" name="username" placeholder="Username">
+                    <span class="focus-input100" data-placeholder="&#xf207;"></span>
                 </div>
-                <div class="l-form-bottom">
-      
-                    <form role="form" action="{%url 'result'%}" method="post">
-                        {% csrf_token %}
-                        <div class="form-group">
-                            <input type="text" name="username" placeholder="Username..." class="l-form-username form-control" >
-                        </div>
-                        <div class="form-group">
-                            <input type="password" name="password" placeholder="Password..." class="l-form-password form-control" >
-                        </div>
-                        <button type="submit" class="btn" href="{%url 'result'%}" >Sign in!</button>
-                        <div class="checkbox">
-                            <input type="checkbox" class="styled">
-                            <label for="remember-me">Remember me</label>
-                        </div>
-                        
-                            <div class="d-flex justify-content-center links">
-                                Don't have an account?   <a href="{%url 'signup' %}">Sign Up</a>
-                            </div>
-                            <div class="d-flex justify-content-center">
-                                <a href="{% url 'password_change'%}">Forgot your password?</a>
-                           
-                        </div>
-                    </form>
+
+                <div class="wrap-input100 validate-input" data-validate="Enter password">
+                    <input class="input100" type="password" name="password" placeholder="Password">
+                    <span class="focus-input100" data-placeholder="&#xf191;"></span>
                 </div>
- 
-            </div>
-        </div>
-        <div class="row">
-           
+
+                <div class="contact100-form-checkbox">
+                    <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+                    <label class="label-checkbox100" for="ckb1">
+                        Remember me
+                    </label>
+                </div>
+
+                <div class="container-login100-form-btn">
+                    <button type="submit"  href="{%url 'result'%}" class="login100-form-btn">
+                        Login
+                    </button>
+                    
+                </div>
+
+                <div class="text-center p-t-90">
+                    <a class="txt1" href="#">
+                        Forgot Password?
+                    </a>
+                </div>
+            </form>
         </div>
     </div>
- 
 </div>
 
-<style>
-    html,
-login-page { padding: 140px 0 100px 0; background-color: 	#282846; }
-.login-text { padding-bottom: 60px; color: #fff; }
-.login-text h1 { color: #fff; text-shadow: 0 1px 6px rgba(51, 51, 51, 0.2); }
-.login-text p { margin-top: 20px; font-size: 22px; line-height: 36px; text-shadow: 0 1px 5px rgba(51, 51, 51, 0.4); }
- 
-.l-form-top {
-    overflow: hidden; padding: 0 30px 20px 30px; background:#007580; background: #fff;; text-align: left;
-    -moz-border-radius: 6px 6px 0 0; -webkit-border-radius: 6px 6px 0 0; font-size: 22px;border-radius: 6px 6px 0 0;
-}
-.l-form-top-left { float: left; width: 75%; padding-top: 30px; color : #282846;  }
-.l-form-top-left h3 { margin-top: 0; color: #fff; color:#282846 ; font-size: 40px }
-.l-form-top-left p { opacity: 0.8; font-size: 22px; line-height: 32px; color: #282846 ; }
-.l-form-top-right { float: left; width: 25%; padding-top: 10px; font-size: 66px; color: #fff; line-height: 100px; text-align: right; opacity: 0.3; }
-.l-form-bottom {
-    padding: 30px 30px 35px 30px; background: #007580; background: #fff;; text-align: left;
-    -moz-border-radius: 0 0 6px 6px; -webkit-border-radius: 0 0 6px 6px; border-radius: 0 0 6px 6px;
-}
- 
-.login-box input[type="text"],
-.login-box input[type="password"] {
-    height: 52px;
-    margin: 0;
-    padding: 0 20px;
-    vertical-align: middle;
-    background: rgba(255, 255, 255, 0.945);
-    border: 3px solid #282846;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 22px;
-    font-weight: 300;
-    line-height: 52px;
-    color: rgb(17, 17, 17);
-    -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px;
-    -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none;
-    -o-transition: all .3s; -moz-transition: all .3s; -webkit-transition: all .3s; -ms-transition: all .3s; transition: all .3s;
-}
- 
-.login-box input[type="text"]:focus, 
-.login-box input[type="password"]:focus {
-    outline: 0; background:  rgb(224, 211, 211); border: 3px solid #2ba560;
-    -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none;
-}
- 
-.login-box input.input-error { border-color: #e7603c; }
- 
-.login-box input[type="text"]::-moz-placeholder, .login-box input[type="password"]::-moz-placeholder { color: #000007; }
-.login-box input[type="text"]:-ms-input-placeholder, .login-box input[type="password"]:-ms-input-placeholder { color: #000007; }
-.login-box input[type="text"]::-webkit-input-placeholder, .login-box input[type="password"]::-webkit-input-placeholder { color: rgb(14, 13, 13); }
- 
-.login-box button.btn {
-    width: 100%;
-    height: 52px;
-    margin: 0;
-    padding: 0 20px;
-    vertical-align: middle;
-    background: #282846;
-    border: 0;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 22px;
-    font-weight: 300;
-    line-height: 52px;
-    color:	#f5fffa;
-    -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px;
-    text-shadow: none;
-    -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none;
-    -o-transition: all .3s; -moz-transition: all .3s; -webkit-transition: all .3s; -ms-transition: all .3s; transition: all .3s;
-}
- 
-.login-box button.btn:hover,
-.login-box button.btn:focus,
-.login-box button.btn:active,
-.login-box button.btn:active:focus,
-.login-box button.btn.active:focus {
-    outline: 0; background: #279456; border: 0; color:	#f5fffa; 
-    -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none;
-}
- 
-.login-box .checkbox { margin-top: 15px; margin-bottom: 0; }
-.login-box .checkbox label { font-size: 13px; line-height: 18px; font-weight: 300; color:rgb(14, 13, 13); color:rgb(14, 13, 13) ; text-align:left}
-.login-box .checkbox label::before { border-color: #fff; border-radius: 4px; }
- 
 
-.btn-link-1:hover, .btn-link-1:focus, .btn-link-1:active, .btn-link-1:active:focus  { outline: 0; background: #279456; color: #fff; }
- 
-.btn-link-1 i { padding-right: 5px; }
-.login-page{
-    background-color:#282846;
-}
-l-form-top-left
-{
-    font-size: 22px;
-}
-</style>
+<div id="dropDownSelect1"></div>
+
+<!--===============================================================================================-->
+<script src="{% static vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+<script src="vendor/bootstrap/js/popper.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+<script src="vendor/daterangepicker/moment.min.js"></script>
+<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+<script src="{% static 'accounts/js/main.js'%}"></script>
+
+
+
 {% endblock %}

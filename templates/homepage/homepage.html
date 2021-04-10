@@ -63,7 +63,7 @@
             <i class="bi bi-list mobile-nav-toggle"></i>
           </nav><!-- .navbar -->
 
-          <a href="{% url 'login'%}"  class="get-started-btn scrollto">Get Started</a>
+          <a href="{% url 'signup'%}"  class="get-started-btn scrollto">Sign Up</a>
         </div>
       </div>
 
@@ -338,9 +338,16 @@
       
       </div>
     </div>
-   
-{% endblock %}
+  </footer><!-- End Footer -->
 
-{% block script %}
-  <script type="text/javascript" src="{%static 'main.js' %}"></script>
-{%endblock%}
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+ 
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'main.js'%}"></script>
+
+  {% endblock %}
+
+
