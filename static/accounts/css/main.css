@@ -210,7 +210,6 @@ iframe {
 .login100-form-logo {
   font-size: 60px; 
   color: #333333;
-
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -223,7 +222,14 @@ iframe {
   border-radius: 50%;
   background-color: #fff;
   margin: 0 auto;
+  background: url("login.png");
+  background-size: 180px 180px;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  z-index:1;
 }
+
 
 .login100-form-title {
   font-family: Poppins-Medium;
