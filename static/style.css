@@ -117,7 +117,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #header.header-scrolled, #header.header-inner-pages {
-  background: #282846;
+  background-color: #282846;
 }
 
 #header .logo {
@@ -180,8 +180,8 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 50px;
   align-items: center;
   vertical-align: middle;
-
 }
+
 .navbar {
   padding: 0;
 }
@@ -218,11 +218,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar a i {
-  font-size: 12px;
+  font-size: 30px;
   line-height: 0;
   margin-left: 5px;
   align-items: center;
-
 }
 
 .navbar > ul > li > a:before {

@@ -161,8 +161,9 @@
   if (preloader) {
     window.addEventListener('load', () => {
       preloader.remove()
-    });
+    });  
   }
+  
 
   /**
    * Initiate glightbox 
@@ -224,3 +225,4 @@
   });
 
 })()
+
